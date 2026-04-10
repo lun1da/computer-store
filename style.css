@@ -38,8 +38,8 @@ h1 {
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 36px;
-    margin-top: ;
-    margin-bottom: ;
+    margin-top: 15px;
+    margin-bottom: 15px ;
 }
 
 p {
@@ -55,7 +55,7 @@ p {
 
 article {
     background-color: white;
-    padding: ;
+    padding: 15px ;
     width: 400px;
     margin: 15px;
 }
@@ -69,14 +69,30 @@ article {
     padding: 10px 75px 10px 75px;
 }
 
+.brown {
+    background-color: #a66a2c;
+}
+
+.green {
+    background-color: #2ecc71;
+}
+
+.red {
+    background-color: #c0392b;
+}
+
+.purple {
+    background-color: #8e44ad;
+}
+
 footer {
     background-color: #AC13A6;
-    padding: ;
+    padding: 15px;
     display: flex;
 }
 
 footer a {
-    margin-right: 20 ;
+    margin-right: 15px;
 }
 
 
