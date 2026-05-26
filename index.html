@@ -1,601 +1,355 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindBalance | Adoleshentët & Teknologjia</title>
+    <meta charset="UTF-8">
+    <title>Teknologjia dhe Adoleshentët</title>
 
-  <!-- Font i thjeshtë dhe i pastër -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f9f8;
+            color: #1a3b3c;
+            line-height: 1.6;
+            text-align: center;
+        }
 
-  <style>
-    /* ========== RREGULLAT BAZË ========== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* NAV - Jorsida */
+        nav {
+            background: white;
+            padding: 18px;
+            border-bottom: 2px solid #b2dfdb;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f0f9f8; /* sfond i bardhë-jeshil i hapur */
-      color: #1a3b3c; /* tekst i errët por i butë */
-      line-height: 1.6;
-    }
+        nav img {
+            width: 30px;
+            vertical-align: middle;
+        }
 
-    /* ========== NAVIGIMI ========== */
-    nav {
-      background-color: white;
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #b2dfdb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-    }
+        nav b {
+            font-size: 26px;
+            color: #00695c;
+            margin-right: 20px;
+        }
 
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: #00695c;
-    }
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: #2e5e5e;
+            font-weight: bold;
+        }
 
-    .logo span {
-      color: #26a69a;
-    }
+        nav a:hover {
+            color: #009688;
+        }
 
-    nav ul {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-    }
+        /* HEADER - Jorsida */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 20px;
+        }
 
-    nav a {
-      text-decoration: none;
-      color: #2e5e5e;
-      font-weight: 500;
-      font-size: 16px;
-      padding: 8px 0;
-      border-bottom: 2px solid transparent;
-      transition: 0.3s;
-    }
+        header h1 {
+            font-size: 52px;
+        }
 
-    nav a:hover {
-      border-bottom-color: #26a69a;
-      color: #00695c;
-    }
+        header p {
+            margin-top: 20px;
+            display: inline-block;
+            background: rgba(0,150,136,0.25);
+            padding: 12px 18px;
+            border-radius: 12px;
+        }
 
-    /* ========== SEKSIONI KRYESOR (HERO) ========== */
-    .hero {
-      background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
-      padding: 100px 60px;
-      text-align: center;
-    }
+        h2 {
+            margin: 60px 0 25px;
+            color: #004d40;
+            font-size: 38px;
+        }
 
-    .hero-content {
-      max-width: 850px;
-      margin: 0 auto;
-    }
+        h3 {
+            color: #00695c;
+        }
 
-    .hero-tag {
-      display: inline-block;
-      background-color: #ffffff;
-      border: 1px solid #b2dfdb;
-      padding: 10px 24px;
-      border-radius: 50px;
-      color: #00796b;
-      font-weight: 600;
-      font-size: 15px;
-      margin-bottom: 25px;
-    }
+        p {
+            max-width: 850px;
+            margin: 10px auto;
+            color: #2e5e5e;
+        }
 
-    .hero h1 {
-      font-size: 64px;
-      font-weight: 800;
-      color: #004d40;
-      line-height: 1.1;
-      margin-bottom: 25px;
-    }
+        img {
+            width: 80%;
+            max-width: 700px;
+            border-radius: 18px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-    .hero h1 span {
-      color: #009688;
-    }
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+        }
 
-    .hero p {
-      font-size: 19px;
-      color: #2e5e5e;
-      margin-bottom: 35px;
-      line-height: 1.7;
-    }
+        li {
+            background: white;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+        }
 
-    .btn-group {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+        /* STATISTIKA - Lusinda */
+        .stat {
+            background: white;
+            width: 70%;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
 
-    .btn {
-      padding: 16px 35px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: all 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
+        .stat h3 {
+            font-size: 40px;
+            color: #009688;
+        }
 
-    .btn-green {
-      background-color: #009688;
-      color: white;
-      box-shadow: 0 8px 25px rgba(0,150,136,0.25);
-    }
+        /* TABELA - Kejsi */
+        table {
+            width: 90%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
 
-    .btn-green:hover {
-      background-color: #00796b;
-      transform: translateY(-3px);
-    }
+        th {
+            background: #009688;
+            color: white;
+            padding: 15px;
+        }
 
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid #009688;
-      color: #009688;
-    }
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0f2f1;
+            text-align: left;
+        }
 
-    .btn-outline:hover {
-      background-color: #e0f2f1;
-      transform: translateY(-3px);
-    }
+        tr:nth-child(even) {
+            background: #f2fbfa;
+        }
 
-    /* ========== SEKSIONET E PËRGJITHSHME ========== */
-    section {
-      padding: 90px 60px;
-    }
+        /* FORM - Lusinda */
+        form {
+            width: 70%;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: left;
+        }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 65px;
-    }
+        input[type=text] {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
 
-    .section-title h2 {
-      font-size: 44px;
-      font-weight: 700;
-      color: #004d40;
-      margin-bottom: 15px;
-    }
+        input[type=radio] {
+            margin-right: 8px;
+        }
 
-    .section-title p {
-      font-size: 18px;
-      color: #3c6465;
-      max-width: 650px;
-      margin: 0 auto;
-    }
+        button {
+            background: #009688;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+        }
 
-    /* ========== KARTAT ME FOTO ========== */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 35px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-      border: 1px solid #e0f2f1;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-    }
-
-    /* FOTO BRENDA KARTËS */
-    .card-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-body {
-      padding: 30px 25px 35px;
-    }
-
-    .card-body h3 {
-      font-size: 26px;
-      font-weight: 700;
-      color: #004d40;
-      margin-bottom: 12px;
-    }
-
-    .card-body p {
-      color: #2e5e5e;
-      margin-bottom: 18px;
-      font-size: 16px;
-    }
-
-    .fact-box {
-      background-color: #e0f2f1;
-      padding: 14px 18px;
-      border-radius: 16px;
-      font-size: 15px;
-      color: #00695c;
-      font-weight: 500;
-      border-left: 5px solid #009688;
-    }
-
-    /* ========== LAYOUT ME 2 KOLONA ========== */
-    .two-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .two-columns img {
-      width: 100%;
-      border-radius: 30px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    }
-
-    .text-col h2 {
-      font-size: 42px;
-      font-weight: 700;
-      color: #004d40;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .text-col h2 span {
-      color: #009688;
-    }
-
-    .text-col p {
-      font-size: 17px;
-      color: #2e5e5e;
-      margin-bottom: 20px;
-    }
-
-    .brain-list {
-      margin-top: 25px;
-    }
-
-    .brain-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 14px 20px;
-      background-color: #f0faf9;
-      border-radius: 18px;
-      margin-bottom: 14px;
-      font-weight: 500;
-      color: #004d40;
-      border: 1px solid #c8e6e0;
-    }
-
-    .brain-dot {
-      width: 14px;
-      height: 14px;
-      background-color: #009688;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* ========== KËSHILLA ========== */
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 28px;
-      margin-top: 50px;
-    }
-
-    .tip-card {
-      text-align: center;
-      background: white;
-      padding: 35px 22px;
-      border-radius: 28px;
-      border: 1px solid #c8e6e0;
-      transition: 0.3s;
-    }
-
-    .tip-card:hover {
-      background: #e0f2f1;
-      border-color: #80cbc4;
-    }
-
-    .tip-icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 20px;
-      background-color: #e0f2f1;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      color: #00796b;
-    }
-
-    .tip-card h4 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #004d40;
-      margin-bottom: 10px;
-    }
-
-    .tip-card p {
-      color: #3c6465;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 800px) {
-      nav {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-      }
-      nav ul {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .hero h1 {
-        font-size: 42px;
-      }
-      .two-columns {
-        grid-template-columns: 1fr;
-      }
-      section {
-        padding: 60px 25px;
-      }
-}
-      /* ========== FOOTER MODERN ========== */
-
-.footer {
-  background: linear-gradient(to right, #dff5f2, #edf9f7);
-  padding: 60px 20px;
-  margin-top: 80px;
-  border-top: 2px solid #b2dfdb;
-}
-
-.footer-content {
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer h3 {
-  font-size: 32px;
-  color: #00695c;
-  margin-bottom: 15px;
-}
-
-.footer p {
-  color: #3c6465;
-  line-height: 1.8;
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.footer-line {
-  width: 90px;
-  height: 4px;
-  background-color: #26a69a;
-  margin: 0 auto 25px;
-  border-radius: 50px;
-}
-
-.footer span {
-  color: #5b7c7d;
-  font-size: 14px;
-}
-    
-  </style>
+        footer {
+            background: #004d40;
+            color: white;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- ==================== NAVIGIMI ==================== -->
-  <nav>
-    <div class="logo">Mind<span>Balance</span></div>
-    <ul>
-      <li><a href="#home">Kreu</a></li>
-      <li><a href="#facts">Fakte</a></li>
-      <li><a href="#brain">Truri</a></li>
-      <li><a href="#tips">Këshilla</a></li>
-    </ul>
-  </nav>
+<!-- NAV - Jorsida -->
+<nav>
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png">
+    <b>MindBalance</b>
+    <a href="#home">Kreu</a>
+    <a href="#fakte">Fakte</a>
+    <a href="#truri">Truri</a>
+    <a href="#stats">Statistika</a>
+    <a href="#kontakt">Pyetësor</a>
+</nav>
 
-  <!-- ==================== HERO ==================== -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="hero-tag">Shëndeti mendor dhe teknologjia</div>
-      <h1>Si po ndikon <span>teknologjia</span> te adoleshentët?</h1>
-      <p>
-        Telefoni, rrjetet sociale dhe gjumi i ndërprerë po formësojnë trurin e të rinjve në mënyra që shkenca sapo ka filluar t'i kuptojë. Ky faqe shpjegon gjithçka që duhet të dish.
-      </p>
-      <div class="btn-group">
-        <button class="btn btn-green" onclick="document.getElementById('facts').scrollIntoView({behavior:'smooth'})">Shiko faktet</button>
-        <button class="btn btn-outline" onclick="document.getElementById('tips').scrollIntoView({behavior:'smooth'})">Merr këshilla</button>
-      </div>
-    </div>
-  </section>
+<!-- HEADER - Jorsida -->
+<header id="home">
+    <h1>Si ndikon teknologjia te adoleshentët?</h1>
+    <p>Teknologjia ndikon në gjumë, fokus, shëndet mendor dhe jetën sociale të adoleshentëve çdo ditë.</p>
+</header>
 
-  <!-- ==================== SEKSIONI I FAKTEVE ME FOTO ==================== -->
-  <section id="facts">
-    <div class="section-title">
-      <h2>Fakte që duhet t'i dijë çdo prind dhe adoleshent</h2>
-      <p>Të dhënat tregojnë një lidhje të fortë mes përdorimit të teknologjisë dhe shëndetit mendor.</p>
-    </div>
+<!-- FAKTE - Kejsi -->
+<h2 id="fakte">Fakte kryesore</h2>
 
-    <div class="cards">
+<h3>Gjumi</h3>
+<p>
+    Adoleshentët kanë nevojë për 8–10 orë gjumë çdo natë.
+    Përdorimi i telefonit para gjumit e ul cilësinë e tij dhe ndikon në lodhje gjatë ditës.
+    Gjumi ndihmon trurin të përpunojë informacionin dhe të përmirësojë kujtesën.
+</p>
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
 
-      <!-- Karta 1: Gjumi -->
-      <div class="card">
-        <img 
-          src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&h=400&fit=crop&auto=format" 
-          alt="Adoleshent duke fjetur i qetë" 
-          class="card-img"
-        >
-        <div class="card-body">
-          <h3>Rëndësia e gjumit</h3>
-          <p>
-            Adoleshentët kanë nevojë për 8 deri në 10 orë gjumë çdo natë. Gjatë gjumit, truri përpunon informacionin, rregullon emocionet dhe forcon kujtesën.
-          </p>
-          <div class="fact-box">
-            Mungesa e gjumit rrit me 55% rrezikun e simptomave depresive tek adoleshentët.
-          </div>
-        </div>
-      </div>
+<h3>Rrjetet sociale</h3>
+<p>
+    Rrjetet sociale ndikojnë në mënyrën si komunikojnë dhe mendojnë adoleshentët.
+    Ato mund të krijojnë varësi për shkak të algoritmeve që mbajnë përdoruesit online.
+    Edhe pse kanë përfitime, mund të ndikojnë në vetëbesim dhe krahasim social.
+</p>
+<img src="https://cdn.pixabay.com/photo/2021/08/19/08/06/social-media-6557345_1280.jpg">
 
-      <!-- Karta 2: Telefoni -->
-      <div class="card">
-        <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKhjQzJJ-9cv6UWX38QhVW25NHzEzfLJVOlA&s" 
-          alt="Vajzë duke parë telefonin natën" 
-          class="card-img"
-        >
-        <div class="card-body">
-          <h3>Efekti i ekranit para gjumit</h3>
-          <p>
-            Drita blu nga ekranet bllokon prodhimin e melatoninës, hormonit që na vë në gjumë. Përdorimi i telefonit 2 orë para gjumit ul ndjeshëm cilësinë e gjumit.
-          </p>
-          <div class="fact-box">
-            Mbi 70% e adoleshentëve e përdorin telefonin në shtrat çdo natë.
-          </div>
-        </div>
-      </div>
+<h3>Efekti i ekranit para gjumit</h3>
+<p>
+    Drita blu nga ekranet pengon gjumin dhe ul prodhimin e melatoninës.
+    Kjo bën që adoleshentët të flenë më vonë dhe të ndihen të lodhur në mëngjes.
+</p>
+<img src="https://cdn.pixabay.com/photo/2019/09/16/10/24/cell-4480577_1280.jpg">
 
-      <!-- Karta 3: Rrjetet sociale -->
-      <div class="card">
-        <img 
-          src="https://cdn.pixabay.com/photo/2021/08/19/08/06/social-media-6557345_1280.jpg" 
-          alt="Adoleshent i menduar para telefonit" 
-          class="card-img"
-        >
-        <div class="card-body">
-          <h3>Presioni i rrjeteve sociale</h3>
-          <p>
-            Algoritmet janë ndërtuar për të na mbajtur sa më gjatë online. Krahasimi i vazhdueshëm me të tjerët ul vetëbesimin dhe rrit ankthin social.
-          </p>
-          <div class="fact-box">
-            Një pushim 1-javor nga rrjetet sociale përmirëson ndjeshëm mirëqenien mendore.
-          </div>
-        </div>
-      </div>
+<!-- TRURI - Kejsi -->
+<h2 id="truri">Çfarë ndodh në tru?</h2>
 
-    </div>
-  </section>
+<img src="https://images.unsplash.com/photo-1559757175-5700dde675bc">
 
-  <!-- ==================== SEKSIONI I TRURIT ==================== -->
-  <section id="brain">
-    <div class="two-columns">
-      <!-- Foto e trurit ose personit duke menduar -->
-      <img 
-        src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=500&fit=crop&auto=format" 
-        alt="Ilustrim i trurit dhe teknologjisë"
-      >
+<p>
+    Çdo njoftim në telefon aktivizon dopaminën në tru, duke krijuar ndjenjë kënaqësie.
+    Kjo mund të çojë në varësi dhe kontroll të vazhdueshëm të telefonit.
+    Me kalimin e kohës ndikon në fokus dhe humor.
+</p>
 
-      <div class="text-col">
-        <h2>Çfarë ndodh <span>në tru</span> gjatë përdorimit të tepërt?</h2>
-        <p>
-          Çdo njoftim, "like" ose video e shkurtër lëshon dopaminë në tru – kimikati i shpërblimit. Me kalimin e kohës, truri mësohet me këtë stimulim të shpejtë dhe bëhet më i vështirë përqendrimi në detyra të thella.
-        </p>
-        <p>
-          Kjo sjellje krijon një cikël: më shumë kohë në ekran → më pak gjumë → më shumë ankth → përsëri më shumë kohë në ekran për t'u shpërqendruar.
-        </p>
+<ul>
+    <li>Pagjumësi</li>
+    <li>Stres dhe ankth</li>
+    <li>Humbje fokusit</li>
+    <li>Varësi nga telefoni</li>
+</ul>
 
-        <div class="brain-list">
-          <div class="brain-item">
-            <div class="brain-dot"></div> Cilësi e ulët e gjumit të thellë
-          </div>
-          <div class="brain-item">
-            <div class="brain-dot"></div> Vështirësi në përqendrim dhe memorie
-          </div>
-          <div class="brain-item">
-            <div class="brain-dot"></div> Nivele më të larta të kortizolit (hormoni i stresit)
-          </div>
-          <div class="brain-item">
-            <div class="brain-dot"></div> Ulje e ndjesisë së kënaqësisë nga aktivitetet e përditshme
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- KËSHILLA -->
+<h2>Si të gjesh ekuilibrin</h2>
 
-  <!-- ==================== KËSHILLA PËR BALANCË ==================== -->
-  <section id="tips">
-    <div class="section-title">
-      <h2>Si të gjesh ekuilibrin e shëndetshëm</h2>
-      <p>Nuk duhet ta hedhësh telefonin. Mjafton ta përdorësh me vetëdije dhe të vendosësh kufij të shëndetshëm.</p>
-    </div>
+<p>
+    Teknologjia duhet përdorur me kufi për të ruajtur shëndetin mendor dhe fizik.
+</p>
 
-    <div class="tips-grid">
-      <div class="tip-card">
-        <div class="tip-icon">
-          <!-- ikonë e thjeshtë: telefon me vijë -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="8" y1="9" x2="16" y2="9"/></svg>
-        </div>
-        <h4>Detoks digjital</h4>
-        <p>Cakto të paktën 2 orë pa ekran para gjumit. Lëre telefonin jashtë dhomës së gjumit.</p>
-      </div>
+<h3>Detoks digjital</h3>
+<p>Shmang telefonin para gjumit.</p>
 
-      <div class="tip-card">
-        <div class="tip-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M10 22l2-5 2 5"/><path d="M8 17h8"/></svg>
-        </div>
-        <h4>Aktivitet fizik</h4>
-        <p>Edhe 30 minuta ecje në ditë ndihmojnë trurin të prodhojë endorfinë dhe të ulë stresin.</p>
-      </div>
+<h3>Aktivitet fizik</h3>
+<p>Sporti ul stresin dhe rrit përqendrimin.</p>
 
-      <div class="tip-card">
-        <div class="tip-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8l4 4-4 4"/><path d="M3 12h16"/></svg>
-        </div>
-        <h4>Jashtë në natyrë</h4>
-        <p>Koha në dritë natyrale rregullon ritmin cirkadian dhe përmirëson gjumin natën.</p>
-      </div>
+<h3>Në natyrë</h3>
+<p>Ajri i pastër ndihmon trurin të qetësohet.</p>
 
-      <div class="tip-card">
-        <div class="tip-icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <h4>Orar i rregullt</h4>
-        <p>Fli dhe zgjohu në të njëjtën orë çdo ditë. Trupi e do rutinën e parashikueshme.</p>
-      </div>
-    </div>
-  </section>
+<h3>Orar i rregullt</h3>
+<p>Rutina ndihmon organizmin.</p>
 
-  <!-- ==================== FOOTER ==================== -->
-<footer class="footer">
-  <div class="footer-content">
+<!-- STATISTIKA - Lusinda -->
+<h2 id="stats">Statistika</h2>
 
+<div class="stat">
+    <h3>70%</h3>
+    <p>Përdorin telefonin në shtrat</p>
+</div>
+
+<div class="stat">
+    <h3>6+ ORË</h3>
+    <p>Rrjete sociale çdo ditë</p>
+</div>
+
+<div class="stat">
+    <h3>8–10 ORË</h3>
+    <p>Gjumë i rekomanduar</p>
+</div>
+
+<!-- TABELA - Kejsi -->
+<h2>Efektet e rrjeteve sociale</h2>
+
+<table>
+    <tr>
+        <th>Aspekti</th>
+        <th>Negative</th>
+        <th>Pozitive</th>
+    </tr>
+
+    <tr>
+        <td>Shëndeti mendor</td>
+        <td>
+            Rrit ankthin, stresin dhe ul vetëbesimin për shkak të krahasimit social.
+        </td>
+        <td>
+            Ndihmon në komunikim dhe krijim komunitetesh.
+        </td>
+    </tr>
+
+    <tr>
+        <td>Komunikimi</td>
+        <td>Izolim social dhe më pak komunikim real.</td>
+        <td>Lidhje me miqtë dhe familjen.</td>
+    </tr>
+
+    <tr>
+        <td>Koha</td>
+        <td>Humbje kohe dhe varësi.</td>
+        <td>Argëtim dhe relaks.</td>
+    </tr>
+
+    <tr>
+        <td>Informacioni</td>
+        <td>Keqinformim dhe lajme të rreme.</td>
+        <td>Qasje e shpejtë në informacion.</td>
+    </tr>
+</table>
+
+<!-- PYETËSOR - Lusinda -->
+<h2 id="kontakt">Pyetësor</h2>
+
+    <form>
+        <label>Sa orë përdor telefonin?</label><br>
+        <input type="text" name="ore_telefon"><br><br>
+
+        <label>A ndikon telefoni në gjumë?</label><br><br>
+        <input type="radio" name="gjum" value="Po">Po<br>
+        <input type="radio" name="gjum" value="Jo">Jo<br>
+        <input type="radio" name="gjum" value="Ndonjëherë">Ndonjëherë<br><br>
+
+        <label>Cili rrjet social?</label><br><br>
+        <input type="radio" name="rrjeti" value="TikTok">TikTok<br>
+        <input type="radio" name="rrjeti" value="Instagram">Instagram<br>
+        <input type="radio" name="rrjeti" value="Snapchat">Snapchat<br>
+        <input type="radio" name="rrjeti" value="YouTube">YouTube<br><br>
+
+        <button type="button">Dërgo</button>
+    </form>
+
+<!-- FOOTER - Joana -->
+<footer>
     <h3>MindBalance</h3>
-
-    <p>
-      Një projekt edukativ për të ndihmuar adoleshentët
-      të krijojnë një marrëdhënie më të shëndetshme me teknologjinë.
-    </p>
-
-    <div class="footer-line"></div>
-
-    <span>
-      © 2026 MindBalance — Të gjitha të drejtat e rezervuara.
-    </span>
-
-  </div>
+    <p style="color:white;">Një projekt edukativ për adoleshentët</p>
+    <span>© 2026 MindBalance</span>
 </footer>
 
 </body>
